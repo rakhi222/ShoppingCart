@@ -47,6 +47,7 @@ public class UserInterface {
                  break;
 			case "3":
 				System.out.println("thank you Bye! Bye !");
+				s.close();
 				System.exit(0);
 
 			}

@@ -24,14 +24,7 @@ public class CatalogService {
 
 	public CatalogItem getItemById(int id) {
 
-		for (CatalogItem item : catalog.getItems()) {
-			if (item.getId() == id) {
-				return item;
-			}
-
-		}
-
-		return null;
+		return this.catalog.getItemById(id);
 
 	}
 
