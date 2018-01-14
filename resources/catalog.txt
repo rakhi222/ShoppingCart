@@ -1,0 +1,6 @@
+1, Black Tea, 30, 10 teabag in a pack
+2, Green Tea, 40, 25 tea pack
+3, Red label tea, 20, masala tea
+4, Coffee, 50, coffee powder only
+5, Sugar, 40, sweet
+6, Salt, 10, tata salt
