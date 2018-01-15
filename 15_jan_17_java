@@ -1,0 +1,35 @@
+Shopping cart
+We have implemented 
+
+Aggregation -- Cart has Cart Item
+               Catalog has Catalog Item
+Overriding -- ToString() method of Object class.
+Overloading -- in constructor -- change the number of parametre (CartItem(catalog item, quantity)
+
+
+
+We can implement some more concepts here:
+------------------------------------------------------------------------------------------------------
+E-commerce - 1.Customer -> registration -> user profile
+                          Authentication
+                          Purchace -> placeorder -> shipping details -> checkout
+                          Shopping ->  Shopping Cart -> Cart
+                                                        Cart Item                               
+                          Purcase history -> order detail
+             
+             2.Admin - Catalog maintainance -> Catalog 
+                                              Catalog Item
+                       Customer maintainance ->                     
+----------------------------------------------------------------------------------------------------------  
+
+
+
+Aggregation --- Customer  -> has -> order detail 
+Inheritence --- Order details  -> is in  -> Purchase history 
+                  
+                  
+                  
+                  
+                  
+                  
+   
