@@ -7,15 +7,19 @@ import java.util.HashSet;
 import models.Catalog;
 import models.CatalogItem;
 import utility.DBUtil;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class CatalogService {
 
-	//private static final String FILENAME = "resources/catalog.txt";
+	private static final String FILENAME = "resources/catalog.txt";
 
 	private Catalog catalog = new Catalog();
 
 	public CatalogService() {
-		this.initializeCatalogWithDB();
+		// this.initializeCatalogWithDB();
+		this.initializeCatalog();
 	}
 
 	public Catalog getCatalog() {
@@ -52,7 +56,7 @@ public class CatalogService {
 		
 	}
 
-	/*private void initializeCatalog() {
+	private void initializeCatalog() {
 
 		BufferedReader br = null;
 		FileReader fr = null;
@@ -86,5 +90,5 @@ public class CatalogService {
 			} catch (IOException ex) {
 			}
 		}
-	}*/
+	}
 }
