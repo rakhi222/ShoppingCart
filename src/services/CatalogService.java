@@ -1,21 +1,21 @@
 package services;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashSet;
 
 import models.Catalog;
 import models.CatalogItem;
+import utility.DBUtil;
 
 public class CatalogService {
 
-	private static final String FILENAME = "resources/catalog.txt";
+	//private static final String FILENAME = "resources/catalog.txt";
 
 	private Catalog catalog = new Catalog();
 
 	public CatalogService() {
-		this.initializeCatalog();
+		this.initializeCatalogWithDB();
 	}
 
 	public Catalog getCatalog() {
@@ -34,8 +34,32 @@ public class CatalogService {
 		return null;
 
 	}
+	
+	private void initializeCatalogWithDB()
+	{
+		DBUtil db = new DBUtil();
+		ResultSet rs =db.initializeDB();
+		try {
+			HashSet<CatalogItem> items = new HashSet<CatalogItem>();
+			while(rs.next())
+			{
+				
+				String itemName = rs.getString(2);
+				int id = rs.getInt(1);
+				float price = rs.getFloat(3);
+				String description = rs.getString(4);
+				CatalogItem e = new CatalogItem(id, itemName, price, description);
+				items.add(e);
+			}
+			this.catalog.setItems(items);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
 
-	private void initializeCatalog() {
+	/*private void initializeCatalog() {
 
 		BufferedReader br = null;
 		FileReader fr = null;
@@ -69,5 +93,5 @@ public class CatalogService {
 			} catch (IOException ex) {
 			}
 		}
-	}
+	}*/
 }
