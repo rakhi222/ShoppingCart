@@ -20,4 +20,17 @@ public class Catalog {
 			System.out.println(item.getId() + "\t" + item.getItemName() + "\t\t\t" + item.getItemPricec() );
 		}
 	}
+	
+	public CatalogItem getItemById(int id) {
+
+		for (CatalogItem item : items) {
+			if (item.getId() == id) {
+				return item;
+			}
+
+		}
+
+		return null;
+
+	}
 }
